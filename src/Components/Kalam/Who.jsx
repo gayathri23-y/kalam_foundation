@@ -1,10 +1,10 @@
 import React from "react";
-import leftImg from "../../assets/Kalam/kalam.png"; // update with your actual path
-import rightImg from "../../assets/Kalam/team.png"; // update with your actual path
+import leftImg from "../../assets/Sec2/kalam.png"; // update with your actual path
+import rightImg from "../../assets/Sec2/team.png"; // update with your actual path
 
 const WhoWeAre = () => {
   return (
-    <section className="bg-white py-15 px-8 md:px-20">
+    <section className="bg-white py-30 px-8 md:px-20">
       <div className="max-w-8xl ">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left section */}
@@ -58,7 +58,7 @@ const WhoWeAre = () => {
 
           {/* Right section */}
           <div className="md:col-span-3 flex justify-end">
-            <div className="w-40 h-40 md:w-50 md:h-45 overflow-hidden rounded-sm mt-38">
+            <div className="w-40 h-40 md:w-70 md:h-50 overflow-hidden rounded-sm mt-38">
               <img src={rightImg} alt="Team" className="w-full h-full object-cover" />
             </div>
           </div>
