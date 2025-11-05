@@ -31,9 +31,9 @@ export default function PixlaAbout() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-20 px-10 font-sans">
+    <div className="max-w-8xl  px-8 md:px-16 py-6 font-sans ">
       {/* ==================== TOP SECTION ==================== */}
-      <div className="top-section flex justify-end mb-12">
+      <div className="top-section flex justify-end mb-12 ">
         <div className="w-full md:w-2/3">
           <p className="text-gray-500 text-sm mb-2">
             Our Story, Values, and Impact
@@ -58,7 +58,7 @@ export default function PixlaAbout() {
           >
             {/* ---------- LEFT IMAGE ---------- */}
             <motion.div
-              className="left-image w-[270px] flex-shrink-0 overflow-hidden rounded-md"
+              className="left-image w-[400px] h-[200px] flex-shrink-0 overflow-hidden "
               animate={{
                 scale: active === sec.id ? 1.03 : 1,
                 opacity: active === sec.id ? 1 : 0.8,
@@ -73,21 +73,21 @@ export default function PixlaAbout() {
             </motion.div>
 
             {/* ---------- RIGHT CONTENT ---------- */}
-            <div className="right-content flex-1 border-t border-gray-200 pt-6 cursor-pointer">
+            <div className="right-content flex-1 border-t border-gray-200 pt-6  cursor-pointer">
               <div className="flex items-start gap-4">
-                <div className="text-5xl font-light text-gray-800 leading-none">
+                <div className="text-5xl font-light text-gray-800 leading-none px-25 ">
                   {sec.id < 10 ? `0${sec.id}.` : sec.id}
                 </div>
 
                 <div>
-                  <h3 className="text-[25px] font-semibold text-gray-800 mb-1">
+                  <h3 className="text-[25px] font-semibold text-gray-800 mb-1 px-35">
                     {sec.title}
                   </h3>
 
                   <AnimatePresence initial={false}>
                     {active === sec.id && (
                       <motion.p
-                        className="text-[20px] text-gray-500 max-w-xl leading-relaxed"
+                        className="text-[20px] text-gray-500  leading-relaxed justify-start px-35"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
@@ -103,7 +103,7 @@ export default function PixlaAbout() {
         ))}
 
         {/* final border */}
-        <div className="border-t border-gray-200" />
+        <div className="border-t border-gray-600 ml-130" />
       </div>
     </div>
   );

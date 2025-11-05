@@ -4,7 +4,7 @@ import logo from "../../assets/Header/lg.png"; // ✅ your logo image
 
 const Header = () => {
   return (
-    <header className="absolute top-10 left-0 w-full flex justify-between items-center px-8 md:px-20 py-6 z-20">
+    <header className="absolute top-10 left-0 w-full flex justify-between items-center px-8 md:px-20 py- z-20">
       {/* Left: Logo + Text */}
       <div className="flex items-center space-x-3">
         <img
@@ -20,7 +20,7 @@ const Header = () => {
       </div>
 
       {/* Right: Button */}
-      <button className="bg-white text-black hover:bg-gray-100 px-5 py-2 rounded-md text-sm text-[18px] font-medium flex items-center gap-1 transition">
+      <button className="bg-white text-black hover:bg-gray-100 px-5 py-2 rounded-md text-[18px] font-medium flex items-center gap-1 transition">
         Lets talk <ArrowRight className="w-5 h-4" />
       </button>
     </header>
