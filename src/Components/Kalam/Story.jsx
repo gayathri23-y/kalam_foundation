@@ -1,123 +1,110 @@
-// OurStorySection.jsx
-import React, { useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 import storyImg from "../../assets/Sec3/stor.png";
 import valuesImg from "../../assets/Sec3/values.png";
 import missionImg from "../../assets/Sec3/mission.png";
 
-const items = [
-  {
-    number: "01",
-    title: "Our Story",
-    text: "Pixla’s Retail Media Network helps brands connect with customers through data-driven advertising, in-store activations, and digital strategies — boosting visibility, personalization, and growth.",
-    src: storyImg,
-    alt: "Our story",
-  },
-  {
-    number: "02",
-    title: "Our Values & Our Impact",
-    text: "We believe in innovation, collaboration, and sustainable growth — creating impact-driven initiatives that empower communities and transform lives.",
-    src: valuesImg,
-    alt: "Values and impact",
-  },
-  {
-    number: "03",
-    title: "Mission & Vision",
-    text: "To foster innovation and leadership among youth while contributing to India’s growth through education, technology, and social empowerment.",
-    src: missionImg,
-    alt: "Mission and vision",
-  },
-];
+export default function PixlaAbout() {
+  const [active, setActive] = useState(1);
 
-export default function OurStorySection() {
-  const [active, setActive] = useState(null);
+  const sections = [
+    {
+      id: 1,
+      title: "Our Story",
+      text: `Pixla’s Retail Media Network helps brands connect with customers through data-driven advertising,<br />in-store activations,<br />and digital strategies—boosting visibility, personalization, and growth.`,
+      image: storyImg,
+    },
+    {
+      id: 2,
+      title: "Our Values & Our Impact",
+      text: `We empower local communities by supporting education,<br />innovation,<br />and sustainability initiatives that create measurable, lasting impact.`,
+      image: valuesImg,
+    },
+    {
+      id: 3,
+      title: "Mission & Vision",
+      text: `Our mission is to bridge ambition and opportunity.<br />Our vision is a world where every individual has the tools and support to achieve their fullest potential.`,
+      image: missionImg,
+    },
+  ];
 
   return (
-    <section className="bg-white px-8 md:px-24 py-16">
-      {/* Header */}
-      <div className="flex justify-between items-start mb-12">
-        <div>
-          <h3 className="text-gray-500 font-medium mb-2 tracking-wide">
+    <div className="max-w-7xl mx-auto py-20 px-10 font-sans">
+      {/* ==================== TOP SECTION ==================== */}
+      <div className="top-section flex justify-end mb-12">
+        <div className="w-full md:w-2/3">
+          <p className="text-gray-500 text-sm mb-2">
             Our Story, Values, and Impact
-          </h3>
-          <p className="text-gray-800 text-[17px] leading-[1.8] max-w-2xl">
-            Founded as part of the Pixla Group’s social initiatives, Pixla Kalam
-            Foundation was created to bridge the gap between ambition and
-            opportunity.
           </p>
-        </div>
-        <div className="text-black opacity-80 text-2xl leading-none select-none">
-          ↗
+          <div className="flex justify-between items-start">
+            <h2 className="text-[17px] leading-relaxed text-gray-800 max-w-xl">
+              Founded as part of the Pixla Group’s social initiatives, Pixla Kalam
+              Foundation was created to bridge the gap between ambition and opportunity.
+            </h2>
+            <ArrowUpRight className="w-6 h-6 text-gray-700 mt-1 flex-shrink-0" />
+          </div>
         </div>
       </div>
 
-      {/* Story Items */}
-      <div className="space-y-10">
-        {items.map((it, idx) => {
-          const isActive = active === idx;
-
-          return (
-            <div
-              key={idx}
-              onMouseEnter={() => setActive(idx)}
-              onMouseLeave={() => setActive(null)}
-              className={`flex flex-col md:flex-row items-start gap-8 cursor-pointer transition-all duration-500 ease-in-out ${
-                isActive ? "opacity-100" : "opacity-80"
-              }`}
+      {/* ==================== MAIN SECTIONS ==================== */}
+      <div className="main-sections space-y-10">
+        {sections.map((sec) => (
+          <div
+            key={sec.id}
+            onMouseEnter={() => setActive(sec.id)}
+            className="section-row flex items-stretch gap-8"
+          >
+            {/* ---------- LEFT IMAGE ---------- */}
+            <motion.div
+              className="left-image w-[270px] flex-shrink-0 overflow-hidden rounded-md"
+              animate={{
+                scale: active === sec.id ? 1.03 : 1,
+                opacity: active === sec.id ? 1 : 0.8,
+              }}
+              transition={{ duration: 0.3 }}
             >
-              {/* Image Section */}
-              <div
-                className={`overflow-hidden rounded-xl shadow-sm transition-all duration-500 ease-in-out ${
-                  isActive ? "md:w-1/3 w-full" : "md:w-1/4 w-full"
-                }`}
-              >
-                <img
-                  src={it.src}
-                  alt={it.alt}
-                  className={`w-full object-cover rounded-xl transition-transform duration-500 ease-in-out ${
-                    isActive
-                      ? "scale-105 h-56 md:h-64"
-                      : "scale-100 h-44 md:h-44"
-                  }`}
-                />
-              </div>
+              <img
+                src={sec.image}
+                alt={sec.title}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
 
-              {/* Text Section */}
-              <div
-                className={`flex-1 transition-all duration-500 ease-in-out ${
-                  isActive
-                    ? "max-h-[800px] opacity-100"
-                    : "max-h-[90px] opacity-70 overflow-hidden"
-                }`}
-              >
-                <div className="flex items-start gap-6">
-                  <span className="text-2xl font-semibold text-gray-700">
-                    {it.number}.
-                  </span>
-                  <div>
-                    <h4 className="text-gray-800 font-semibold mb-2 text-[16px]">
-                      {it.title}
-                    </h4>
-                    <p
-                      className={`text-gray-500 text-sm leading-relaxed transition-all duration-500 ${
-                        isActive
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-1 md:opacity-70"
-                      }`}
-                    >
-                      {it.text}
-                    </p>
-                  </div>
+            {/* ---------- RIGHT CONTENT ---------- */}
+            <div className="right-content flex-1 border-t border-gray-200 pt-6 cursor-pointer">
+              <div className="flex items-start gap-4">
+                <div className="text-5xl font-light text-gray-800 leading-none">
+                  {sec.id < 10 ? `0${sec.id}.` : sec.id}
                 </div>
 
-                {isActive && (
-                  <hr className="border-gray-200 mt-6 transition-opacity duration-500" />
-                )}
+                <div>
+                  <h3 className="text-[25px] font-semibold text-gray-800 mb-1">
+                    {sec.title}
+                  </h3>
+
+                  <AnimatePresence initial={false}>
+                    {active === sec.id && (
+                      <motion.p
+                        className="text-[20px] text-gray-500 max-w-xl leading-relaxed"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.35 }}
+                        dangerouslySetInnerHTML={{ __html: sec.text }}
+                      />
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
+
+        {/* final border */}
+        <div className="border-t border-gray-200" />
       </div>
-    </section>
+    </div>
   );
 }
