@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { FiArrowUpRight } from 'react-icons/fi';
-import Footeri from "./../../../assets/Footer/Footer.png";
+import Footeri from "./../../assets/Footer/Footer.png";
 
 const Footer = () => {
   const socialLinks = [
@@ -63,11 +63,11 @@ const Footer = () => {
           {/* End of Combined Contact/Address Column */}
 
           {/* Column 4 (or 3, depending on screen size): Image - Adjusted position */}
-          <div className="md:col-span-3 lg:col-span-1 flex justify-end -mt-8 md:-mt-40 "> 
+          <div className="md:col-span-3 lg:col-span-1 flex justify-end -mt-8 md:-mt-35 "> 
             <img 
               src={Footeri} 
               alt="Hands stacked together" 
-              className="w-[200px] h-[350px] object-cover" 
+              className="w-[150px] h-[200px] object-cover" 
             />
           </div>
 
