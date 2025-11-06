@@ -1,7 +1,11 @@
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { FiArrowUpRight } from 'react-icons/fi';
+<<<<<<< HEAD
 import Footeri from "../../assets/Footer/Footer.png";
+=======
+import Footeri from "./../../assets/Footer/Footer.png";
+>>>>>>> origin/Shibu
 
 const Footer = () => {
   const socialLinks = [
@@ -13,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white font-sans">
-      <div className="container mx-auto px-28 py-16 md:py-24">
+      <div className="container mx-auto px-20 py-16 md:py-24">
         
         <h2 className="text-6xl md:text-8xl font-thin tracking-widest uppercase mb-12 md:mb-16">
           Get in touch
@@ -63,11 +67,11 @@ const Footer = () => {
           {/* End of Combined Contact/Address Column */}
 
           {/* Column 4 (or 3, depending on screen size): Image - Adjusted position */}
-          <div className="md:col-span-3 lg:col-span-1 flex justify-end -mt-8 md:-mt-40 "> 
+          <div className="md:col-span-3 lg:col-span-1 flex justify-end -mt-8 md:-mt-35 "> 
             <img 
               src={Footeri} 
               alt="Hands stacked together" 
-              className="w-[200px] h-[350px] object-cover" 
+              className="w-[150px] h-[200px] object-cover" 
             />
           </div>
 
@@ -92,7 +96,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors"
+                className="flex items-center gap-1 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 {link.name}
                 <FiArrowUpRight className="text-xs" />
@@ -102,7 +106,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div>
-            <span className="text-4xl lg:text-5xl font-light text-gray-500">
+            <span className="text-4xl lg:text-5xl font-light text-white">
               @2025
             </span>
           </div>
