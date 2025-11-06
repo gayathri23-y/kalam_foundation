@@ -22,7 +22,7 @@ const WhoWeAre = () => {
 
           {/* Center section */}
           <div className="md:col-span-6">
-            <p className="text-black text-base md:text-3xl leading-7 md:leading-9 max-w-prose ml-9">
+            <p className="text-black text-base md:text-2xl leading-7 md:leading-9 max-w-prose ml-9">
               Pixla Kalam Foundation is a non-profit <br />
                organization dedicated to empowering <br />
                communities, nurturing youth talent, and <br />
