@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white font-sans">
-      <div className="container mx-auto px-28 py-16 md:py-24">
+      <div className="container mx-auto px-20 py-16 md:py-24">
         
         <h2 className="text-6xl md:text-8xl font-thin tracking-widest uppercase mb-12 md:mb-16">
           Get in touch
@@ -92,7 +92,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors"
+                className="flex items-center gap-1 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 {link.name}
                 <FiArrowUpRight className="text-xs" />
@@ -102,7 +102,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div>
-            <span className="text-4xl lg:text-5xl font-light text-gray-500">
+            <span className="text-4xl lg:text-5xl font-light text-white">
               @2025
             </span>
           </div>
