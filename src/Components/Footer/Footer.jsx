@@ -1,11 +1,6 @@
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { FiArrowUpRight } from 'react-icons/fi';
-<<<<<<< HEAD
-import Footeri from "../../assets/Footer/Footer.png";
-=======
 import Footeri from "./../../assets/Footer/Footer.png";
->>>>>>> origin/Shibu
+
 
 const Footer = () => {
   const socialLinks = [
