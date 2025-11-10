@@ -45,7 +45,7 @@ export default function TestimonialSection() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Left Section */}
         <div>
-          <p className="inline-block text-lg md:text-md text-gray-400 font-medium mb-4 cursor-pointer">Testimonial</p>
+          <p className="inline-block text-lg md:text-md text-gray-400 font-medium mb-9 cursor-pointer">Testimonial</p>
           <h2 className="text-3xl md:text-4xl font-md mt-3 mb-8 leading-snug text-black">
            Pixla Success <br /> Stories
           </h2>
