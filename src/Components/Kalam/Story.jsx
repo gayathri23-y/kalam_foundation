@@ -1,8 +1,8 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
 import Story from "./../../assets/Sec3/stor.png";
 import Values from "./../../assets/Sec3/values.png";
 import Mission from "./../../assets/Sec3/mission.png";
+import Element from "./../../assets/Sec3/element.png"; // ✅ import your PNG arrow
 
 const data = [
   {
@@ -27,52 +27,66 @@ const data = [
 
 const StorySection = () => {
   return (
-    <section className=" px-6 py-16 md:px-24 grid md:grid-cols-3 gap-10">
-      {/* LEFT SIDE & RIGHT SIDE WRAPPED TOGETHER */}
-      <div className="flex flex-col gap-8 col-span-2 md:col-span-2">
-        <h3 className="text-gray-400 text-lg font-medium mb-2 ml-35">
+    <section className="px-6 md:px-24 py-16 font-sans">
+      {/* ===== TOP HEADING + PARAGRAPH ===== */}
+      <div className="relative mb-16 max-w-4xl mx-auto text-left">
+        {/* ✅ Replace Lucide icon with your PNG */}
+        <img
+          src={Element}
+          alt="Arrow Icon"
+          className="w-8 h-8 absolute top-8 -right-20 transition-transform duration-300 hover:scale-110"
+        />
+
+        <h3 className="text-gray-400 text-lg font-medium mb-3 ml-120">
           Our Story, Values, and Impact
         </h3>
-        <p className="text-gray-800 text-lg font-normal mb-6 max-w-3xl">
+        <p className="text-gray-800 text-lg font-normal leading-relaxed ml-120">
           Founded as part of the Pixla Group’s social initiatives, Pixla Kalam
           Foundation was created to bridge the gap between ambition and
           opportunity.
         </p>
-
-        <ArrowUpRight className="w-8 h-8 text-gray-800 mb-6" />
-
-        <hr className="border-gray-200 mb-6" />
-
+      </div>
+<br />
+      {/* ===== MAIN CONTENT SECTIONS ===== */}
+      <div className="flex flex-col">
         {data.map((item, index) => (
           <div
             key={index}
             className="group grid md:grid-cols-2 gap-10 items-center transition-all duration-500 ease-in-out"
           >
-            {/* Left - Image */}
-            <div className="overflow-hidden flex justify-center transition-all duration-500 ease-in-out">
+            {/* LEFT - IMAGE */}
+            <div className="overflow-hidden transition-all duration-500 ease-in-out">
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-40 object-cover rounded-md transition-all duration-500 ease-in-out group-hover:h-60"
+                className="w-full h-40 object-cover  transition-all duration-500 ease-in-out group-hover:h-60"
               />
             </div>
 
-            {/* Right - Content */}
-            <div className="relative overflow-hidden transition-all duration-500 ease-in-out h-40 group-hover:h-60 flex items-center">
-              <div className="flex gap-6">
-                <p className="text-4xl font-semibold text-gray-800">{item.id}</p>
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed max-w-md opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
-                    {item.text}
+            {/* RIGHT - CONTENT */}
+            <div className="flex flex-col justify-center mt-4">
+              {/* Show divider above only for first item */}
+              {index === 0 && (
+                <hr className="border-gray-300 w-full transition-all duration-500 group-hover:border-gray-800 group-hover:scale-x-105 origin-center" />
+              )}
+
+              {/* Content */}
+              <div className="relative overflow-hidden transition-all duration-500 ease-in-out h-40 group-hover:h-60 flex items-center">
+                <div className="flex gap-6 items-start">
+                  <p className="text-4xl font-semibold text-gray-800 min-w-[60px]">
+                    {item.id}
                   </p>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-md opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Divider */}
-            <div className="md:col-span-2">
-              <hr className="border-gray-200 my-4" />
+              {/* Divider after each item except the last one */}
+              <hr className="border-gray-300 w-full transition-all duration-500 group-hover:border-gray-800 group-hover:scale-x-105 origin-center" />
             </div>
           </div>
         ))}

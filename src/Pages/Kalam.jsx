@@ -20,6 +20,7 @@ const Kalam = () => {
       <Empower />
       <Testimonial />
       <Showcase /> 
+      
     </div>
   )
 }
