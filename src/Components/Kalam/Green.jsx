@@ -17,8 +17,8 @@ const GreenMission = () => {
           </p>
 
           {/* Key Focus Areas */}
-          <h4 className="text-gray-400 font-medium mb-4">Key Focus Areas</h4>
-          <ul className="list-disc list-inside space-y-4 text-gray-800 text-sm">
+          <h4 className="text-gray-500 font-medium mb-4">Key Focus Areas</h4>
+          <ul className="list-disc list-inside space-y-1 text-gray-800 text-[18px]">
             <li>
               <span className="font-medium">Tree Sapling Drive:</span> Planting
               saplings in schools, colleges, villages, and urban areas;
@@ -43,7 +43,7 @@ const GreenMission = () => {
 
         {/* RIGHT SIDE */}
         <div className="flex flex-col items-end">
-          <p className="text-gray-400 text-lg max-w-5xl font-medium mb-4 mr-5">
+          <p className="text-gray-400 text-lg max-w-6xl font-medium mb-17 mr-5">
             2. Plant Today, Protect Tomorrow
           </p>
           <img
