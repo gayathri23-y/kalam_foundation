@@ -27,7 +27,7 @@ const data = [
 
 const StorySection = () => {
   return (
-    <section className="px-6 md:px-24 py-16 font-sans">
+    <section className="px-8 md:px-20 py-16 font-sans">
       {/* ===== TOP HEADING + PARAGRAPH ===== */}
       <div className="relative mb-16 max-w-4xl mx-auto text-left">
         {/* ✅ Replace Lucide icon with your PNG */}

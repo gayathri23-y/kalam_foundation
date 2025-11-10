@@ -5,15 +5,15 @@ import { ArrowUpRight } from "lucide-react";
 const HeroSection = () => {
   return (
     <section
-      className="elative w-full max-w-[1100px] mx-auto h-[500px] py-16 px-8 md:px-20  overflow-hidden my-12relative w-full h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center py-16 px-8 md:px-20  overflow-hidden my-12"
+      className="elative w-full max-w-[1100px] mx-auto h-[200px] py-16 px-8 md:px-20  overflow-hidden my-12relative w-full h-[500px] md:h-[500px] bg-cover bg-center flex items-center justify-center py-16 px-8 md:px-20  overflow-hidden my-12"
       style={{ backgroundImage: `url(${BgImage})` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="relative text-center text-white max-w-3xl">
-        <p className="text-lg md:text-xl leading-relaxed mb-6 font-semibold">
+      <div className="relative text-center text-white max-w-3xl mt-60">
+        <p className="text-lg md:text-xl leading-relaxed mb-9 font-semibold">
           Founded as part of the Pixla Group’s social initiatives, Pixla Kalam
           Foundation was created to bridge the gap between ambition and
           opportunity

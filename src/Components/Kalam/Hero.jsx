@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-white px-8 md:px-20 max-w-5xl mt-10 md:mt-12">
         <h1 className="text-[34px] md:text-[43px] font-semibold leading-tight md:leading-snug mb-4">
-          Inspired By Dr. A.P.J. Abdul Kalam  <br className="hidden md:block" />
+          Inspired By Dr. A.P.J. Abdul Kalam <br className="hidden md:block" />
           Empowering A Better Tomorrow
         </h1>
 
@@ -35,6 +35,9 @@ const Hero = () => {
       {/* Scroll Down Button */}
       <div className="absolute bottom-10 right-8 md:right-20 z-10">
         <button
+          onClick={() =>
+            document.getElementById("green-section")?.scrollIntoView({ behavior: "smooth" })
+          }
           type="button"
           className="border border-white text-white px-5 py-2 rounded-sm text-[18px] font-medium flex items-center gap-2 hover:bg-white/10 transition"
         >

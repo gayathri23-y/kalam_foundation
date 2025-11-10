@@ -4,7 +4,7 @@ import EmpowerImage from "./../../assets/Sec5/em.png"; // replace with your imag
 
 const KeyPrograms = () => {
   return (
-    <section className="px-6 md:px-24 py-16 font-sans">
+    <section className="px-6 md:px-20 py-16 font-sans">
       {/* ===== Section Heading ===== */}
       <h3 className="text-gray-400 text-lg font-medium mb-3">
         Our Key Programs

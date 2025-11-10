@@ -4,7 +4,8 @@ import GreenMissionImage from "./../../assets/Sec6/grn.png"; // replace with you
 
 const GreenMission = () => {
   return (
-    <section className="px-6 md:px-24 py-16 font-sans">
+    // 👇 ADD THIS ID HERE
+    <section id="green-section" className="px-6 md:px-20 py-16 font-sans">
       {/* ===== Main Content Grid ===== */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         {/* LEFT SIDE */}
@@ -49,7 +50,7 @@ const GreenMission = () => {
           <img
             src={GreenMissionImage}
             alt="Plant Today, Protect Tomorrow"
-            className="rounded-md w-20 md:w-[80%]  mt-20 object-cover "
+            className="rounded-md w-20 md:w-[80%] mt-20 object-cover"
           />
         </div>
       </div>
