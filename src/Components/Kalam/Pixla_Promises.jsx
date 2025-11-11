@@ -1,5 +1,7 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react"; // optional, if not using image remove
+import ArrowImg from "./../../assets/Pixla_Promises/Elements.png"; // 🔥 your custom arrow image
+
 import Img1 from "./../../assets/Pixla_Promises/Pixla Promises.png";
 import Img2 from "./../../assets/Pixla_Promises/Pixla Promises.png";
 import Img3 from "./../../assets/Pixla_Promises/Pixla Promises.png";
@@ -58,7 +60,7 @@ const PixlaPromisesSection = () => {
   return (
     <section className="bg-white py-20 px-8 md:px-20 font-sans">
       {/* Header */}
-      <div className="grid md:grid-cols-2 gap-10 mb-16">
+      <div className="grid md:grid-cols-2 gap-10 mb-10">
         <h2 className="text-gray-400 text-lg font-medium">Pixla Promises</h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-xl">
           Through Pixla Kalam Foundation, we’ve made five meaningful promises — where
@@ -66,60 +68,69 @@ const PixlaPromisesSection = () => {
         </p>
       </div>
 
-      {/* Animated Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols- gap-3">
-        {promises.map((item, index) => (
-          <div
-            key={item.id}
-            className={`flex flex-col justify-between border-r border-gray-500 last:border-r-0 p-6 transition-transform duration-700 ease-out opacity-0 animate-slideUp`}
-            style={{ animationDelay: `${index * 0.15}s` }}
-          >
-            <div>
-              <h3 className="text-7xl h-30 font-bold text-gray-900 mb-5 text-center">
-                {item.id}.
-              </h3>
+      {/* 🚄 Train Scroll Container */}
+      <div className="relative overflow-hidden w-full">
+        <div className="scroll-track flex animate-trainScroll">
+          {promises.concat(promises).map((item, index) => (
+            <div
+              key={index}
+              className="promise-card flex flex-col justify-between bg-white border-r border-gray-400 p-6 mx-2 w-[300px] shrink-0"
+            >
+              <div>
+                <h3 className="text-7xl font-semibold text-gray-900 mb-7 text-center">
+                  {item.id}.
+                </h3>
 
-              <div className="flex justify-center items-center gap-2 mb-4">
-                <ArrowUpRight className="w-5 h-5 text-gray-800" />
-                <h4 className="text-lg font-semibold text-gray-800 mb-4 leading-snug text-center">
-                  {item.title}
-                </h4>
+                {/* 🔽 Replace icon with image arrow here */}
+                <div className="flex justify-center items-center gap-2 mb-3">
+                  <img
+                    src={ArrowImg}
+                    alt="Arrow"
+                    className="w-10 h-25 object-contain" // adjust size here
+                  />
+                  <h4 className="text-lg font-semibold text-gray-800 ml-5 leading-snug text-left">
+                    {item.title}
+                  </h4>
+                </div>
+
+                <p className="text-gray-600 text-sm leading-relaxed text-left whitespace-pre-line">
+                  {item.desc}
+                </p>
               </div>
 
-              <p className="text-gray-600 text-sm leading-relaxed text-left whitespace-pre-line">
-                {item.desc}
-              </p>
-            </div>
-
-            {/* Image */}
-            <div className="relative mt-6">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-17 object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-black/40 text-white text-center py-6 text-sm font-medium">
-                {item.bottomText}
+              <div className="relative mt-4">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-15 object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-black/40 text-white text-center py-5 text-sm font-medium">
+                  {item.bottomText}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Animation Keyframes */}
+      {/* 🚄 CSS Animation */}
       <style>{`
-        @keyframes slideUp {
+        .scroll-track {
+          width: max-content;
+          animation: trainScroll 30s linear infinite;
+        }
+
+        @keyframes trainScroll {
           0% {
-            transform: translateY(30px);
-            opacity: 0;
+            transform: translateX(0);
           }
           100% {
-            transform: translateY(0);
-            opacity: 1;
+            transform: translateX(-10%);
           }
         }
-        .animate-slideUp {
-          animation: slideUp 0.8s ease-out forwards;
+
+        .scroll-track:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
