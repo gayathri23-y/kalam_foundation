@@ -41,35 +41,29 @@ export default function TestimonialSection() {
     <section className="bg-white py-16 px-6 md:px-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* ===== Left Section ===== */}
-        <div className="text-center md:text-left max-md:mb-10 -mt-10">
-          <p className="inline-block text-lg md:text-md text-gray-400 font-medium mb-4 cursor-pointer">
+        <div className="text-left md:text-left h-full">
+          <p className="text-gray-400 text-base md:text-md font-medium mb-3">
             Testimonial
           </p>
-          <h2 className="text-3xl md:text-4xl font-md mt-3 mb-8 leading-snug text-black">
+          <h2 className="text-3xl md:text-4xl font-medium leading-snug text-black mb-8">
             Pixla Success <br className="hidden md:block" /> Stories
           </h2>
-
-          <div className="flex justify-center md:justify-start">
-            <button className="flex items-center gap-2 bg-green-700 text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition">
-              Show All <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
         </div>
 
         {/* ===== Right Section ===== */}
-        <div className="relative md:border-l border-gray-400">
+        <div className="relative md:border-l border-gray-400 mt-12 md:mt-0">
           {/* Quote Mark */}
-          <div className="absolute top-4 md:top-24 left-1/2 md:left-10 text-green-600 font-serif text-[90px] md:text-[180px] leading-none opacity-20 transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2">
+          <div className="absolute top-6 md:top-24 left-1/2 md:left-10 ml- text-green-600 font-serif text-[80px] md:text-[150px] leading-none opacity-20 transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2">
             “
           </div>
 
           {/* Testimonial Card */}
           <div className="relative p-4 md:p-8 pt-16 transition-all duration-700 ease-in-out">
-            <div className="flex flex-col items-center md:items-start gap-6 text-center ml-10 md:text-left">
+            <div className="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
               <img
                 src={testimonials[currentIndex].img}
                 alt={testimonials[currentIndex].name}
-                className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-lg filter grayscale"
+                className="w-44 h-44 md:w-60 md:h-60 object-cover rounded-lg filter grayscale"
               />
               <div className="flex flex-col gap-4 text-black">
                 <p className="text-base md:text-lg py-4 leading-relaxed">
@@ -102,6 +96,11 @@ export default function TestimonialSection() {
             </div>
           </div>
         </div>
+      </div>
+            <div className="flex justify-start">
+        <button className="flex items-center gap-2 bg-green-700 text-white px-6 py-2 text-sm font-medium hover:bg-gray-800 transition">
+          Show All <ArrowRight className="w-4 h-4" />
+        </button>
       </div>
 
       <hr className="border-t border-gray-500 my-6" />
